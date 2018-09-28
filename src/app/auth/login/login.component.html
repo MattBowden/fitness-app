@@ -9,7 +9,7 @@
       <input matInput type="password" placeholder="Password" name="password" ngModel required>
       <mat-error>Password is required</mat-error>
     </mat-form-field>
-    <button *ngIf="!isLoading" [disabled]="!f.valid" type="submit" mat-raised-button color="primary">Login</button>
-    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <button *ngIf="!(isLoading$ | async)" [disabled]="!f.valid" type="submit" mat-raised-button color="primary">Login</button>
+    <mat-spinner *ngIf="isLoading$ | async"></mat-spinner>
   </form>
 </section>

@@ -15,6 +15,8 @@ import { UIService } from './shared/ui.service';
 import { TrainingService } from './training/training.service';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './app.reducer';
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AuthModule
+    AuthModule,
+    StoreModule.forRoot(reducers)
   ],
   providers: [
     AuthService,
